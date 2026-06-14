@@ -429,6 +429,7 @@ class EduEngine:
         t = re.sub(r"\bokee?\b|\boke\b|\bsip\b|\bgas\b|\bgass\b|\byuk\b", "ya", t)
         t = re.sub(r"\blatian\b", "latihan", t)
         t = re.sub(r"\bpelajaran\b|\bmapel\b", "subjek", t)
+        t = re.sub(r"\baku\b|\baku\b", "aku", t)
         t = re.sub(r"\bberhitung seru\b", "matematika", t)
         t = re.sub(r"\bpenjelajah dunia\b|\bpenjelajah dunia ipa\b|\bbiologi\b", "biologi", t)
         t = re.sub(r"\bbahasa & cerita\b|\bbahasa indonesia\b|\bbahasa indonesia sma\b", "bahasa indonesia", t)
@@ -458,6 +459,12 @@ class EduEngine:
             r"ada menunya|ada menu nya|"
             r"menu dong|lihat menu|show menu|"
             r"kasih menu|tampilkan menu|"
+            r"ada mapelnya apa|ada mapelnya apa aja|ada mapel apa|ada mapel apa aja|"
+            r"ada subjek apa aja|ada subjek apa aja|"
+            r"ada pelajaran apa aja|ada pelajaran apa aja|"
+            r"ada materi apa aja|ada materi apa aja|"
+            r"ada topik apa aja|ada topik apa aja|"
+            r"lihat menu bro|lihat menu breh|spill dong menu nya|apa aja menunya|"
             r"liat menu|lihat daftar|"
             r"pilihannya apa|opsinya apa|"
             r"mau belajar apa|"
