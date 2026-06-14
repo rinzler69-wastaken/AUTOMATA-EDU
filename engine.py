@@ -343,6 +343,50 @@ class EduEngine:
                 ],
             },
 
+            # ================================================================
+            # BAHASA INGGRIS
+            # ================================================================
+            "bahasa inggris": {
+                "desc": "Belajar bahasa Inggris seru: kosakata (vocabulary), tata bahasa (grammar), percakapan sehari-hari, dan tenses dasar.",
+                "emoji": "🇬🇧",
+                "aliases": ["english", "inggris", "eng", "english adventure", "bahasa inggris"],
+                "materi": (
+                    "📌 **Catatan English Adventure:**\n"
+                    "1. **Greetings:** Hello, Good Morning, How are you?, Goodbye.\n"
+                    "2. **Pronouns:** I (saya), You (kamu), They (mereka), We (kita), He (dia laki-laki), She (dia perempuan), It (benda/hewan).\n"
+                    "3. **To Be:** Present (am, is, are), Past (was, were). *Example: I am a student.*\n"
+                    "4. **Simple Present Tense:** Menyatakan fakta atau kebiasaan. Rumus: $S + V_1(s/es)$. *Example: She eats an apple.*\n"
+                    "5. **Simple Past Tense:** Menyatakan kejadian masa lalu. Rumus: $S + V_2$. *Example: We played soccer yesterday.*\n"
+                    "6. **Vocabulary - Animals:** Cat (kucing), Dog (anjing), Bird (burung), Elephant (gajah), Fish (ikan).\n"
+                    "7. **Vocabulary - Colors:** Red (merah), Blue (biru), Green (hijau), Yellow (kuning), White (putih).\n"
+                    "8. **Question Words (5W1H):** Who (siapa), What (apa), Where (di mana), When (kapan), Why (kenapa), How (bagaimana).\n"
+                    "9. **Singular & Plural:** Book (satu buku) → Books (banyak buku). Tambahkan -s atau -es.\n"
+                    "10. **Prepositions:** In (di dalam), On (di atas permukaan), Under (di bawah), Beside (di samping)."
+                ),
+                "kuis": [
+                    {"soal": "Apa bahasa Inggris dari 'Kucing'?", "kunci": "cat"},
+                    {"soal": "Translate to English: 'Saya adalah seorang siswa'.", "kunci": "I am a student"},
+                    {"soal": "Translate to English: 'Apel merah'.", "kunci": "red apple"},
+                    {"soal": "What is the plural form of 'Book'?", "kunci": "books"},
+                    {"soal": "Complete: She ___ (go/goes) to school every day.", "kunci": "goes"},
+                    {"soal": "Past tense dari kata kerja 'play' adalah?", "kunci": "played"},
+                    {"soal": "Apa bahasa Inggris dari warna 'Kuning'?", "kunci": "yellow"},
+                    {"soal": "Complete: They ___ (am/is/are) playing football.", "kunci": "are"},
+                    {"soal": "Apa bahasa Inggris dari 'Di bawah meja'?", "kunci": "under the table"},
+                    {"soal": "Kata tanya untuk menanyakan tempat?", "kunci": "where"},
+                    {"soal": "Apa lawan kata dari 'Big' (besar)?", "kunci": "small"},
+                    {"soal": "Bahasa Inggris dari angka 'Sebelas'?", "kunci": "eleven"},
+                    {"soal": "Complete: We ___ (was/were) happy yesterday.", "kunci": "were"},
+                    {"soal": "Apa arti dari kata kerja 'Run'?", "kunci": "lari"},
+                    {"soal": "Apa bahasa Inggris dari 'Burung'?", "kunci": "bird"},
+                    {"soal": "Complete: An ___ (a/an) apple a day keeps the doctor away.", "kunci": "an"},
+                    {"soal": "Apa bahasa Inggris dari 'Selamat pagi'?", "kunci": "good morning"},
+                    {"soal": "Lawan kata dari 'Hot' (panas)?", "kunci": "cold"},
+                    {"soal": "Bahasa Inggris dari 'Keluarga'?", "kunci": "family"},
+                    {"soal": "Complete: He has a ___ (dog/dogs) named Blacky.", "kunci": "dog"},
+                ],
+            },
+
         }
 
         # ── Build alias → canonical key map ────────────────────────────────
@@ -385,26 +429,140 @@ class EduEngine:
         t = re.sub(r"\bokee?\b|\boke\b|\bsip\b|\bgas\b|\bgass\b|\byuk\b", "ya", t)
         t = re.sub(r"\blatian\b", "latihan", t)
         t = re.sub(r"\bpelajaran\b|\bmapel\b", "subjek", t)
+        t = re.sub(r"\bberhitung seru\b", "matematika", t)
+        t = re.sub(r"\bpenjelajah dunia\b|\bpenjelajah dunia ipa\b|\bbiologi\b", "biologi", t)
+        t = re.sub(r"\bbahasa & cerita\b|\bbahasa indonesia\b|\bbahasa indonesia sma\b", "bahasa indonesia", t)
+        t = re.sub(r"\bkreatif digital\b|\bteknologi informasi\b|\bTI\b|\bTIK\b", "teknologi informasi", t)
+        t = re.sub(r"\bpenjelajah bumi\b|\bgeografi\b", "geografi", t)
+        t = re.sub(r"\bpetualangan fisika\b|\bfisika\b", "fisika", t)
+        t = re.sub(r"\blab kimia cilik\b|\bkimia\b", "kimia", t)
+        t = re.sub(r"\bdetektif sejarah\b|\bsejarah\b|\bIPS\b", "sejarah", t)
+        t = re.sub(r"\benglish adventure\b|\bbahasa inggris\b", "bahasa inggris", t)
 
         if re.search(r"\b(reset|ulang|mulai baru|keluar|restart|from scratch|awal lagi)\b", t):
             return "RESET_SYSTEM"
 
-        if re.search(r"\b(menu|daftar|list|subjek|topik|belajar apa|ada apa|pilihan|apa aja|mau belajar apa)\b", t):
+        if re.search(
+            r"(menu|menunya|menu nya|daftar|list|pilihan|opsi|fitur|"
+            r"subjek|mapel|mata pelajaran|pelajaran|materi|topik|"
+            r"belajar apa|belajar apa aja|belajar apa saja|"
+            r"ada apa aja|ada apa saja|ada apa|"
+            r"apa aja|apa saja|apa yg ada|apa yang ada|"
+            r"bisa apa aja|bisa apa saja|"
+            r"bisa belajar apa|"
+            r"materinya apa|materi apa aja|materi apa saja|"
+            r"topiknya apa|topik apa aja|topik apa saja|"
+            r"pelajaran apa aja|pelajaran apa saja|"
+            r"mapelnya apa|mapel apa aja|"
+            r"ada menu ga|ada menu gak|ada menu kah|"
+            r"ada menunya|ada menu nya|"
+            r"menu dong|lihat menu|show menu|"
+            r"kasih menu|tampilkan menu|"
+            r"liat menu|lihat daftar|"
+            r"pilihannya apa|opsinya apa|"
+            r"mau belajar apa|"
+            r"tersedia apa aja|"
+            r"yang bisa dipelajari apa aja|"
+            r"yang tersedia apa aja|"
+            r"ada pelajaran apa aja|"
+            r"ada materi apa aja|"
+            r"ada topik apa aja|"
+            r"materi yang tersedia|"
+            r"fiturnya apa aja|"
+            r"isinya apa aja|"
+            r"ada apa disini|"
+            r"disini bisa apa aja|"
+            r"aku bisa ngapain aja|"
+            r"ngapain aja disini|"
+            r"mulai dari mana|"
+            r"harus belajar apa|"
+            r"rekomendasi materi|"
+            r"rekomendasi topik)",
+            t
+        ):
             return "ASK_MENU"
 
-        if re.search(r"\b(materi|baca|belajar|teori|penjelasan|jelasin|rangkuman|rangkum|catatan|notes|pelajari|paham|info)\b", t):
+        if re.search(
+            r"(materi|baca|belajar|teori|penjelasan|jelasin|jelaskan|"
+            r"rangkuman|rangkum|ringkasan|catatan|notes|"
+            r"pelajari|paham|memahami|ngerti|mengerti|"
+            r"info|informasi|wawasan|pengetahuan|"
+            r"ajari|ajarin|ajarkan|teach|"
+            r"bahas|bahasin|pembahasan|"
+            r"kupas|kupasin|ulas|ulasan|"
+            r"apa itu|apaan itu|"
+            r"ceritain|ceritakan|"
+            r"kasih materi|"
+            r"kasih penjelasan|"
+            r"mau belajar|"
+            r"ingin belajar|"
+            r"pengen belajar|"
+            r"mau ngerti|"
+            r"ingin ngerti|"
+            r"pengen ngerti|"
+            r"tolong jelaskan|"
+            r"bantu jelaskan|"
+            r"bantu pahami|"
+            r"pengertian|"
+            r"definisi|"
+            r"konsep|"
+            r"dasar dasar|"
+            r"dasarnya|"
+            r"fundamental)",
+            t
+        ):
             return "LEARN_MATERIAL"
 
-        if re.search(r"\b(kuis|tes|ujian|soal|latihan|uji|cobain|coba|quiz|test|try|mulai soal|mau soal)\b", t):
+        if re.search(
+            r"(kuis|quiz|tes|test|ujian|"
+            r"soal|latihan soal|"
+            r"uji kemampuan|"
+            r"tryout|try out|"
+            r"mau kuis|"
+            r"mulai kuis|"
+            r"mulai quiz|"
+            r"mulai tes|"
+            r"mulai ujian|"
+            r"kasih soal|"
+            r"beri soal|"
+            r"berikan soal|"
+            r"punya soal|"
+            r"ada soal|"
+            r"latihan dong|"
+            r"latihan yuk|"
+            r"mau latihan|"
+            r"ingin latihan|"
+            r"pengen latihan|"
+            r"uji saya|"
+            r"tes saya|"
+            r"kuis dong|"
+            r"quiz dong|"
+            r"ayo kuis|"
+            r"ayo quiz|"
+            r"langsung soal|"
+            r"langsung kuis)",
+            t
+        ):
             return "START_QUIZ"
 
-        if re.search(r"\b(ya|yes|oke|mulai|siap|betul|lanjut|next|gaskeun|boleh|mau|deal|setuju)\b", t):
+
+        if re.search(
+            r"\b(ya|yes|oke|ok|sip|siap|betul|benar|"
+            r"gaskeun|gaspol|gasin|gass|bolehlah|boleh|"
+            r"iyoi|ha a|ho oh|yoii|yoi|ha yoi|yoi ah|ha a yoi|"
+            r"boleh|oke|bolehlah|boleeeeh|"
+            r"lanjut|next|boleh|mau|deal|setuju|"
+            r"gas+|gass+|gaspol+|gas pol+|"
+            r"gaskan|gasin|gaskeun|"
+            r"heeh|he eh|ho oh|ho o)\b",
+            t
+        ):
             return "YES"
 
-        if re.search(r"\b(tidak|no|batal|belum|gak|nope|skip|cancel|lewat)\b", t):
+        if re.search(r"\b(tidak|no|batal|belum|gak|nope|skip|cancel|rak|moh|gah|ogah|ogeh|nanti|lain kali|lain waktu|keluar|keluar dari kuis|keluar dari materi|keluar dari pembelajaran|mau keluar|ingin keluar|pengen keluar|keluar aja|selesai|stop|udah cukup|udahlah|udahan|cukup ah)\b", t):
             return "NO"
 
-        if re.search(r"\b(bantuan|help|bingung|huh|apa|gimana|cara|how|tolong)\b", t):
+        if re.search(r"\b(bantuan|help|bingung|bingungy|bantuin dong|bantuin ya|hah gimana|piye|piye iki|gimana ini|piye to|tolong piye|piye iki carane|tolong gimana|tolong gimana ya|tolong gimana carane|piye carane|piye to carane|piye toh|piye toh iki|piye toh iki carane|piye toh carane|piye toh carane iki|piye toh carane iki piye|huh|apa|gimana|cara|how|tolong)\b", t):
             return "HELP"
 
         return "UNKNOWN"

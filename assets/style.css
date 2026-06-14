@@ -1,0 +1,43 @@
+/* ==========================================
+   KUSTOMISASI BUBBLE CHAT STREAMLIT
+   ========================================== */
+
+/* Mengubah bentuk bubble chat USER (Sebelah Kanan) */
+[data-testid="stChatMessage"]:nth-child(even) {
+    background-color: #E3F2FD !important; /* Biru muda yang segar */
+    border-radius: 15px 15px 0px 15px !important;
+    border: 1px solid #BBDEFB;
+    padding: 12px 18px;
+    margin-bottom: 10px;
+    color: #0D47A1 !important; /* Warna teks biru tua agar kontras */
+}
+
+/* Mengubah bentuk bubble chat ASSISTANT/BOT (Sebelah Kiri) */
+[data-testid="stChatMessage"]:nth-child(odd) {
+    background-color: #F0F4F8 !important; /* Abu-abu kebiruan yang lembut */
+    border-radius: 15px 15px 15px 0px !important;
+    border: 1px solid #D9E2EC;
+    padding: 12px 18px;
+    margin-bottom: 10px;
+    color: #102A43 !important; /* Warna teks abu gelap */
+}
+
+/* ==========================================
+   KUSTOMISASI TOMBOL (GRADASI & ELEGAN)
+   ========================================== */
+.stButton>button {
+    background: linear-gradient(135deg, #00A896 0%, #028090 100%) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    border: none !important;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+/* Efek saat tombol diarahkan oleh mouse (Hover) */
+.stButton>button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 168, 150, 0.3);
+    color: #FFFFFF !important;
+}

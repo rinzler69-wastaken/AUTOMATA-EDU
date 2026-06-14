@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobat Cilik Academy</title>
+    <style>
+        /* --- RESET BERANDA --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #FFFDF0; /* Warna krem lembut latar belakang */
+        }
+
+        /* --- HEADER & NAVBAR (SUDAH DIPERBAIKI) --- */
+        header {
+            background-color: #FFDE4D; /* Warna kuning solid penuh tanpa bocor */
+            width: 100%;
+            padding: 15px 6%; /* Jarak atas-bawah dan kanan-kiri */
+            display: flex;
+            justify-content: space-between; /* Logo di kiri, menu di kanan */
+            align-items: center; /* Sejajar lurus secara vertikal */
+            border-bottom: 3px solid #E7612E; /* Garis pembatas oranye tipis di bawah kuning */
+        }
+
+        /* Struktur Logo di Kiri */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            font-size: 24px;
+        }
+
+        .logo-text {
+            color: #E7612E; /* Warna oranye tulisan */
+            font-weight: bold;
+            font-size: 22px;
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        /* Struktur Menu Navigasi di Kanan */
+        .navbar-menu {
+            display: flex;
+            gap: 12px; /* Jarak antar tombol menu */
+        }
+
+        .nav-link {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            padding: 10px 22px;
+            border-radius: 25px; /* Membuat tombol melengkung lonjong */
+            text-transform: uppercase;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        /* Style untuk tombol Beranda, Pilih Game, Juara Kelas */
+        .btn-blue {
+            color: #0066CC; /* Teks Biru sesuai gambar referensi */
+            background: transparent;
+        }
+
+        .btn-blue:hover {
+            transform: scale(1.05);
+        }
+
+        /* Style khusus untuk tombol mencolok "AYO BERMAIN!" */
+        .btn-action {
+            background-color: #FF5722; /* Latar oranye kemerahan */
+            color: white;
+            border: 2px solid #E64A19;
+            box-shadow: 0 4px 0 #BF360C; /* Efek 3D tombol */
+        }
+
+        .btn-action:hover {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #BF360C;
+        }
+
+        /* --- HERO BANNER & KONTEN --- */
+        .main-container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .hero-banner {
+            border: 5px solid #FF9800; /* Bingkai oranye tebal bulat */
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            margin-bottom: 30px;
+        }
+
+        .banner-inside {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+                              url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1170&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
+            padding: 70px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .banner-inside h1 {
+            font-size: 34px;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .banner-inside p {
+            font-size: 16px;
+            max-width: 650px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            line-height: 1.5;
+        }
+
+        .welcome-section {
+            text-align: center;
+        }
+
+        .welcome-section h2 {
+            color: #E7612E;
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .welcome-section p {
+            color: #666;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">🚀</div>
+            <div class="logo-text">
+                SOBAT CILIK
+                <span>ACADEMY</span>
+            </div>
+        </div>
+
+        <nav class="navbar-menu">
+            <a href="#" class="nav-link btn-blue">Beranda</a>
+            <a href="#" class="nav-link btn-blue">Pilih Game</a>
+            <a href="#" class="nav-link btn-blue">Juara Kelas</a>
+            <a href="#" class="nav-link btn-action">Ayo Bermain!</a>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="hero-banner">
+            <div class="banner-inside">
+                <h1>✨ TAMAN BERMAIN & BELAJAR ✨</h1>
+                <p>Kumpulkan bintang nilaimu, baca cerita seru, dan ikuti kuis berhadiah lencana keren! 👑🏆</p>
+            </div>
+        </section>
+
+        <section class="welcome-section">
+            <h2>Selamat Datang di Beranda Utama! 👋</h2>
+            <p>Di sini kamu bisa melihat kabar seru dan mulai menjelajah pelajaran pilihan bersama Piko.</p>
+        </section>
+    </main>
+
+</body>
+</html>

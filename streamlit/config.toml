@@ -1,0 +1,15 @@
+[theme]
+# Warna aksen utama untuk tombol aktif dan slider (Teal yang segar)
+primaryColor = "#00A896"
+
+# Warna latar belakang utama chat (Putih bersih agar teks terbaca jelas)
+backgroundColor = "#FFFFFF"
+
+# Warna latar belakang Sidebar / Panel Status (Abu-abu terang kebiruan)
+secondaryBackgroundColor = "#F4F7F6"
+
+# Warna teks utama (Charcoal/Hitam Lembut)
+textColor = "#2C3E50"
+
+# Font modern bawaan Streamlit
+font = "sans serif"
